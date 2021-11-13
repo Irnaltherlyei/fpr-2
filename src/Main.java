@@ -9,8 +9,8 @@ public class Main {
 
         int maxDaysInCurrentMonth = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
         int firstDateOfMonth = calendar.getActualMinimum(Calendar.DAY_OF_MONTH);
-        int daysInWeek = calendar.getMaximum(Calendar.DAY_OF_WEEK);
         int weeksInMonth = calendar.getActualMaximum(Calendar.WEEK_OF_MONTH);
+        int daysInWeek = calendar.getMaximum(Calendar.DAY_OF_WEEK);
 
         // cal represents a calender month
         int[][] cal = new int[weeksInMonth][daysInWeek];
@@ -29,7 +29,7 @@ public class Main {
         for (int[] x:cal) {
             for (int i: x) {
                 int currentDay = calendar.get(Calendar.DAY_OF_MONTH);
-                System.out.print(String.format("%4s", ((i == currentDay) ? "*":"") + i + " "));
+                System.out.print(String.format("%4s", ((i == 0) ? "":((i == currentDay) ? "*":"") + i + " ")));
             }
             System.out.println("");
         }
